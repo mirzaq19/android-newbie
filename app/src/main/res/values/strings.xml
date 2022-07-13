@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidNewbie</string>
+    <string name="image">Image</string>
+    <string name="name">Name</string>
+    <string name="detail">Detail</string>
+    <string name="view_detail">Lihat Detail</string>
 </resources>
