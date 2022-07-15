@@ -7,4 +7,6 @@
     <string name="about">About</string>
     <string name="dev_name">M. Auliya Mirzaq Romdloni</string>
     <string name="dev_email">mirzaqarjap@gmail.com</string>
+    <string name="overview">Overview</string>
+    <string name="favorite">Favorite</string>
 </resources>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -26,7 +27,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun showRecyclerList() {
         rvScientist.layoutManager = LinearLayoutManager(this)
-        rvScientist.adapter = ListScientistAdapter(list)
+        val listScientistAdapter = ListScientistAdapter(list)
+        rvScientist.adapter = listScientistAdapter
+
+        listScientistAdapter.setOnItemClickCallback(object : ListScientistAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Scientist) {
+                Toast.makeText(this@MainActivity, "You selected " + data.name, Toast.LENGTH_SHORT).show()
+                val moveIntent = Intent(this@MainActivity, DetailActivity::class.java)
+                moveIntent.putExtra(DetailActivity.EXTRA_NAME, data.name)
+                moveIntent.putExtra(DetailActivity.EXTRA_DETAIL, data.detail)
+                moveIntent.putExtra(DetailActivity.EXTRA_BORN, data.born)
+                moveIntent.putExtra(DetailActivity.EXTRA_IMAGE, data.image)
+                startActivity(moveIntent)
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

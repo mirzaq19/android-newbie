@@ -7,12 +7,20 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 
 class ListScientistAdapter(private val scientists: ArrayList<Scientist>) : RecyclerView.Adapter<ListScientistAdapter.ScientistViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class ScientistViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView = itemView.findViewById(R.id.tv_item_title)
         var detail: TextView = itemView.findViewById(R.id.tv_item_detail)
         var image: ImageView = itemView.findViewById(R.id.img_item)
+        var btnDetail: MaterialButton = itemView.findViewById(R.id.btn_item_detail)
     }
 
     override fun getItemCount(): Int {
@@ -26,6 +34,8 @@ class ListScientistAdapter(private val scientists: ArrayList<Scientist>) : Recyc
             .into(holder.image)
         holder.name.text = scientist.name
         holder.detail.text = scientist.detail
+
+        holder.btnDetail.setOnClickListener { onItemClickCallback.onItemClicked(scientist) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScientistViewHolder {
@@ -33,4 +43,7 @@ class ListScientistAdapter(private val scientists: ArrayList<Scientist>) : Recyc
         return ScientistViewHolder(view)
     }
 
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Scientist)
+    }
 }
