@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:id="@+id/img_item"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     tools:src="@tools:sample/backgrounds/scenic"
@@ -35,12 +36,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:background="transparent"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/purple_500"
                     android:contentDescription="@string/image"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/ic_baseline_favorite_border_24"
-                    tools:ignore="DuplicateSpeakableTextCheck" />
+                    tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
             </FrameLayout>
 
 
@@ -48,10 +52,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingHorizontal="16dp"
+                android:paddingTop="16dp">
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
+                    android:id="@+id/tv_item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
@@ -60,11 +66,13 @@
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     />
                 <TextView
+                    android:id="@+id/tv_item_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textSize="12sp"
                     android:maxLines="2"
+                    android:ellipsize="end"
                     android:text="@string/detail"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
@@ -78,8 +86,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="end">
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_item_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
                     android:text="@string/view_detail"
                     style="?attr/borderlessButtonStyle"
                     />
