@@ -4,4 +4,7 @@
     <string name="name">Name</string>
     <string name="detail">Detail</string>
     <string name="view_detail">View Detail</string>
+    <string name="about">About</string>
+    <string name="dev_name">M. Auliya Mirzaq Romdloni</string>
+    <string name="dev_email">mirzaqarjap@gmail.com</string>
 </resources>
