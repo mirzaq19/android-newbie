@@ -5,4 +5,5 @@ data class Scientist (
     var image: Int = 0,
     var detail: String = "",
     var born: String = "",
+    var fav: Boolean = false
 )

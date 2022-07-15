@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 moveIntent.putExtra(DetailActivity.EXTRA_DETAIL, data.detail)
                 moveIntent.putExtra(DetailActivity.EXTRA_BORN, data.born)
                 moveIntent.putExtra(DetailActivity.EXTRA_IMAGE, data.image)
+                moveIntent.putExtra(DetailActivity.EXTRA_FAV, data.fav)
                 startActivity(moveIntent)
             }
         })

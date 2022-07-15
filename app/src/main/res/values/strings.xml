@@ -9,4 +9,5 @@
     <string name="dev_email">mirzaqarjap@gmail.com</string>
     <string name="overview">Overview</string>
     <string name="favorite">Favorite</string>
+    <string name="unfavorite">Unfavorite</string>
 </resources>
